@@ -16,10 +16,10 @@ public class app {
         intentos++;
         System.out.println("\u001B[32mBienvenidos a Online Banking, por favor ingrese las credenciales " +
                 "solicitadas: ");
-        System.out.println("\u001B[34mClave token generada Automaticamente: " + clave);
-        String miUsuario = fillStringDate("Usuario: ",sc);
-        String miContraseña = fillStringDate("contraseña: ",sc);
-        Integer miClave = fillIntegerDate("Calve: ",sc);
+        System.out.println("\u001B[34mClave token generada Automaticamente: \u001B[32m" + clave);
+        String miUsuario = fillStringDate("\u001B[34mUsuario: \u001B[32m",sc);
+        String miContraseña = fillStringDate("\u001B[34mcontraseña: \u001B[32m",sc);
+        Integer miClave = fillIntegerDate("\u001B[34mCalve: \u001B[32m",sc);
         sc.nextLine();
 
         Boolean isLoginTrue = login(miUsuario,miContraseña,miClave,clave);
@@ -48,8 +48,6 @@ public class app {
         Boolean isValidPass = contraseña.equals(passUser);
 
         return isValidPass && isValidToken && isValidUser;
-
-
     }
     public static String fillStringDate(String message, Scanner leer) {
         System.out.print(message);
@@ -60,6 +58,5 @@ public class app {
         System.out.print(message);
         return leer.nextInt();
     }
-
 
 }
